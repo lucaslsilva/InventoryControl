@@ -8,7 +8,9 @@ namespace InventoryControl.EntityFrameworkCore
 {
     public class InventoryControlDbContext : AbpZeroDbContext<Tenant, Role, User, InventoryControlDbContext>
     {
-        /* Define a DbSet for each entity of the application */
+        public DbSet<Product.Product> Products { get; set; }
+        public DbSet<Store.Store> Stores { get; set; }
+        public DbSet<Inventory.Inventory> Inventories { get; set; }
         
         public InventoryControlDbContext(DbContextOptions<InventoryControlDbContext> options)
             : base(options)

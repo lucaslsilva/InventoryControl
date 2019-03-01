@@ -1033,6 +1033,27 @@ namespace InventoryControl.Migrations
                     b.ToTable("AbpUsers");
                 });
 
+            modelBuilder.Entity("InventoryControl.Inventory.Inventory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ProductId");
+
+                    b.Property<int>("Quantity");
+
+                    b.Property<int>("StoreId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("StoreId");
+
+                    b.ToTable("DbInventory");
+                });
+
             modelBuilder.Entity("InventoryControl.MultiTenancy.Tenant", b =>
                 {
                     b.Property<int>("Id")
@@ -1081,6 +1102,62 @@ namespace InventoryControl.Migrations
                     b.HasIndex("TenancyName");
 
                     b.ToTable("AbpTenants");
+                });
+
+            modelBuilder.Entity("InventoryControl.Product.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Brand")
+                        .IsRequired();
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(65536);
+
+                    b.Property<byte[]>("Picture");
+
+                    b.Property<double>("Price");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DbProduct");
+                });
+
+            modelBuilder.Entity("InventoryControl.Store.Store", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(65536);
+
+                    b.Property<string>("City")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.Property<string>("PhoneNumber")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("State")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ZipCode")
+                        .HasMaxLength(50);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DbStore");
                 });
 
             modelBuilder.Entity("Abp.Application.Features.EditionFeatureSetting", b =>
@@ -1231,6 +1308,19 @@ namespace InventoryControl.Migrations
                     b.HasOne("InventoryControl.Authorization.Users.User", "LastModifierUser")
                         .WithMany()
                         .HasForeignKey("LastModifierUserId");
+                });
+
+            modelBuilder.Entity("InventoryControl.Inventory.Inventory", b =>
+                {
+                    b.HasOne("InventoryControl.Product.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("InventoryControl.Store.Store", "Store")
+                        .WithMany()
+                        .HasForeignKey("StoreId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("InventoryControl.MultiTenancy.Tenant", b =>
