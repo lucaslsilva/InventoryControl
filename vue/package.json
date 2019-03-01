@@ -29,8 +29,8 @@
     "@vue/cli-service": "^3.0.4",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
-    "vue-template-compiler": "^2.5.17",
-    "typescript": "^3.0.0"
+    "typescript": "^3.0.0",
+    "vue-template-compiler": "^2.5.17"
   },
   "babel": {
     "presets": [
