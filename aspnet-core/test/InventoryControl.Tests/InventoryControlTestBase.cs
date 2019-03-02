@@ -45,6 +45,43 @@ namespace InventoryControl.Tests
                 new TenantRoleAndUserBuilder(context, 1).Create();
             });
 
+            // Seed initial data for product tests
+            UsingDbContext(context =>
+            {
+                context.Products.AddRange(
+                    new InventoryControl.Product.Product
+                    {
+                        Code = "Product 1",
+                        Description = "This is the description for Product 1",
+                        Brand = "Brand A",
+                        Price = 15.0
+                    },
+                    new InventoryControl.Product.Product
+                    {
+                        Code = "Product 2",
+                        Description = "This is the description for Product 2",
+                        Brand = "Brand B",
+                        Price = 20.0
+                    }
+                );
+            });
+
+            // Seed initial data for store tests
+            UsingDbContext(context =>
+            {
+                context.Stores.AddRange(
+                    new InventoryControl.Store.Store
+                    {
+                        Name = "Store X",
+                        Address = "15 - Fake Street",
+                        City = "Somewhere",
+                        State = "MG",
+                        ZipCode = "111-1111",
+                        PhoneNumber = "31 99999-9999"
+                    }
+                );
+            });
+
             LoginAsDefaultTenantAdmin();
         }
 
