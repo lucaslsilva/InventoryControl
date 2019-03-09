@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using InventoryControl.Util;
@@ -9,13 +6,8 @@ using InventoryControl.Util;
 namespace InventoryControl.Store.Dto
 {
     [AutoMapFrom(typeof(Store))]
-    public class CreateStoreDto : EntityDto
+    public class UpdateStoreDto : EntityDto
     {
-        [Required]
-        [StringLength(AnnotationsUtil.MediumString)]
-        public string Name { get; set; }
-
-        [Required]
         [StringLength(AnnotationsUtil.LongString)]
         public string Address { get; set; }
 
@@ -33,7 +25,7 @@ namespace InventoryControl.Store.Dto
 
         public override string ToString()
         {
-            return $"Name: {Name}, Address: {Address}, City: {City}, State: {State}, ZipCode: {ZipCode}, PhoneNumber: {PhoneNumber}";
+            return $"Address: {Address}, City: {City}, State: {State}, ZipCode: {ZipCode}, PhoneNumber: {PhoneNumber}";
         }
     }
 }

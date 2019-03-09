@@ -8,5 +8,7 @@ namespace InventoryControl.Store
     public interface IStoreAppService : IApplicationService
     {
         Task<ListResultDto<StoreDto>> GetAll();
+        void UpdateStore(UpdateStoreDto input);
+        void CreateStore(CreateStoreDto input);
     }
 }
