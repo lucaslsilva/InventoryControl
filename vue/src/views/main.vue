@@ -15,8 +15,7 @@
                   <a>
                     <Icon type="cube" size="32"></Icon>
                     <h1 >{{L('AppName')}}</h1>
-                  </a>
-                   
+                  </a>                   
                 </div>
             </shrinkable-menu>
         </div>
@@ -24,7 +23,7 @@
             <div class="main-header">
                 <div class="navicon-con">
                     <Button :style="{transform: 'rotateZ(' + (this.shrink ? '-90' : '0') + 'deg)'}" type="text" @click="toggleClick">
-                        <Icon type="navicon" size="32"></Icon>
+                        <i class="fas fa-chevron-left"></i>
                     </Button>
                 </div>
                 <div class="header-middle-con">
@@ -35,7 +34,7 @@
                 <div class="header-avator-con">
                     <full-screen v-model="isFullScreen" @on-change="fullscreenChange"></full-screen>
                     <lock-screen></lock-screen>  
-                    <notice></notice>   
+                    <!-- <notice></notice>    -->
                     <language-list></language-list>         
                     <div class="user-dropdown-menu-con">
                         <Row type="flex" justify="end" align="middle" class="user-dropdown-innercon">
@@ -45,7 +44,7 @@
                                     <Icon type="arrow-down-b"></Icon>
                                 </a>
                                 <DropdownMenu slot="list">
-                                    <DropdownItem name="ownSpace">{{L('UserProfile')}}</DropdownItem>
+                                    <!-- <DropdownItem name="ownSpace">{{L('UserProfile')}}</DropdownItem> -->
                                     <DropdownItem name="loginout" divided>{{L('Logout')}}</DropdownItem>
                                 </DropdownMenu>
                             </Dropdown>
@@ -79,7 +78,8 @@
     import util from '../lib/util';
     import copyfooter from '../components/Footer.vue'
     import LanguageList from '../components/language-list.vue'
-    import AbpBase from '../lib/abpbase'
+    import AbpBase from '../lib/abpbase'    
+    import "@fortawesome/fontawesome-free/css/all.css";
     @Component({
       components:{shrinkableMenu,tagsPageOpened,breadcrumbNav,fullScreen,lockScreen,notice,copyfooter,LanguageList}
     })

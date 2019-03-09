@@ -43,19 +43,32 @@ export const otherRouters: Router = {
         { path: 'home', meta: { title: 'HomePage' }, name: 'home', component: () => import('../views/home/home.vue') }
     ]
 }
-export const appRouters: Array<Router> = [{
-    path: '/setting',
-    name: 'setting',
-    permission: '',
-    meta: { title: 'ManageMenu' },
-    icon: '&#xe68a;',
-    component: main,
-    children: [
-        { path: 'user', permission: 'Pages.Users', meta: { title: 'Users' }, name: 'user', component: () => import('../views/setting/user/user.vue') },
-        { path: 'role', permission: 'Pages.Roles', meta: { title: 'Roles' }, name: 'role', component: () => import('../views/setting/role/role.vue') },
-        { path: 'tenant', permission: 'Pages.Tenants', meta: { title: 'Tenants' }, name: 'tenant', component: () => import('../views/setting/tenant/tenant.vue') }
-    ]
-}]
+export const appRouters: Array<Router> = [
+    {
+        path: '/product',
+        name: 'product',
+        permission: '',
+        meta: { title: 'Products' },
+        icon: '&#xe6b9;',
+        component: main,
+        children: [
+            { path: 'products', meta: { title: 'Products' }, name: 'products', component: () => import('../views/product/product.vue') }
+        ]
+    },
+    {
+        path: '/setting',
+        name: 'setting',
+        permission: '',
+        meta: { title: 'ManageMenu' },
+        icon: '&#xe6cd;',
+        component: main,
+        children: [
+            { path: 'user', permission: 'Pages.Users', meta: { title: 'Users' }, name: 'user', component: () => import('../views/setting/user/user.vue') },
+            { path: 'role', permission: 'Pages.Roles', meta: { title: 'Roles' }, name: 'role', component: () => import('../views/setting/role/role.vue') },
+            { path: 'tenant', permission: 'Pages.Tenants', meta: { title: 'Tenants' }, name: 'tenant', component: () => import('../views/setting/tenant/tenant.vue') }
+        ]
+    }
+]
 export const routers = [
     loginRouter,
     locking,

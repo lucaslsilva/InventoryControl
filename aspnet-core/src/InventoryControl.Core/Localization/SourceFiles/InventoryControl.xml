@@ -95,5 +95,21 @@
     <text name="Skins">Skins</text>
     <text name="Settings">Settings</text>
     <text name="Filter">Filter</text>
+    <text name="AppName">Inventory Control</text>
+    <text name="TenantNotSelected">Tenant not selected</text>
+    <text name="UserNamePlaceholder">Username or email</text>
+    <text name="PasswordPlaceholder">Password</text>
+    <text name="ForgetPassword">Forgot password</text>
+    <text name="UserNameRequired">Username required</text>
+    <text name="PasswordRequired">Password required</text>
+    <text name="OK">OK</text>
+    <text name="Error">Error</text>
+    <text name="CopyRight">All rights reserved</text>
+    <text name="LoginPrompt">Logging in...</text>
+    <text name="LockScreen">Lock Screen</text>
+    <text name="UserProfile">User Profile</text>
+    <text name="ManageMenu">Settings</text>
+    <text name="CreationTime">Creation Time</text>
+    <text name="LastLoginTime">Last Login Time</text>
   </texts>
 </localizationDictionary>

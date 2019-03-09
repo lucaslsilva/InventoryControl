@@ -91,5 +91,21 @@
     <text name="StartTyping">Comece a escrever</text>
     <text name="Skins">Temas</text>
     <text name="Settings">Configurações</text>
+    <text name="AppName">Controle de Estoque</text>
+    <text name="TenantNotSelected">Tenant não selecionado</text>
+    <text name="UserNamePlaceholder">Usuário ou e-mail</text>
+    <text name="PasswordPlaceholder">Senha</text>
+    <text name="ForgetPassword">Esqueci a senha</text>
+    <text name="UserNameRequired">Usuário é obrigatório</text>
+    <text name="PasswordRequired">Senha é obrigatória</text>
+    <text name="OK">OK</text>
+    <text name="Error">Erro</text>
+    <text name="CopyRight">Todos os direitos reservados</text>
+    <text name="LoginPrompt">Fazendo login...</text>
+    <text name="LockScreen">Bloquear tela</text>
+    <text name="UserProfile">Perfil do Usuário</text>
+    <text name="ManageMenu">Configurações</text>
+    <text name="CreationTime">Data de Criação</text>
+    <text name="LastLoginTime">Último Login</text>
   </texts>
 </localizationDictionary>

@@ -16,19 +16,21 @@
                 <div class="unlock-input-overflow-con">
                     <div class="unlock-overflow-body" :style="{right: inputLeft}">
                         <input ref="inputEle" v-model="password" class="unlock-input" type="password" :placeholder="L('PasswordPlaceholder')" />
-                        <button ref="unlockBtn" @mousedown="unlockMousedown" @mouseup="unlockMouseup" @click="handleUnlock" class="unlock-btn"><Icon color="white" type="key"></Icon></button>
+                        <button ref="unlockBtn" @mousedown="unlockMousedown" @mouseup="unlockMouseup" @click="handleUnlock" class="unlock-btn"><i class="fas fa-unlock" style="margin-left: -15px; color:white"></i></button>
                     </div>
                 </div>
             </div>
             <div class="unlock-locking-tip-con">{{L('Locked')}}</div>
         </div>
     </transition>
-</template>
+</template>s
 
 <script lang="ts">
 import { Component, Vue,Inject, Prop,Watch } from 'vue-property-decorator';
 import AbpBase from '../../../lib/abpbase'
 import Cookies from 'js-cookie';
+import "@fortawesome/fontawesome-free/css/all.css";
+
 @Component
 export default class UnLock extends AbpBase {
     name:string='Unlock';

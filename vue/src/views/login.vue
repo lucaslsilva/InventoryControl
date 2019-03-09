@@ -8,13 +8,10 @@
             <span class="title">{{L('AppName')}}</span>
           </a>
         </div>
-        <div class="desc">
-          {{L('WelcomeMessage')}}
-        </div>
       </div>
       <div class="main">
         <div v-if="!!tenant" class="tenant-title"><a @click="showChangeTenant=true">{{L('CurrentTenant')}}:{{tenant.name}}</a></div>
-        <div v-if="!tenant" class="tenant-title"><a @click="showChangeTenant=true">{{L('NotSelected')}}</a></div>
+        <div v-if="!tenant" class="tenant-title"><a @click="showChangeTenant=true">{{L('TenantNotSelected')}}</a></div>
         <Form ref="loginform" :rules="rules" :model="loginModel">
           <FormItem prop="userNameOrEmailAddress">
             <div class="ivu-input-wrapper ivu-input-wrapper-large ivu-input-type">
